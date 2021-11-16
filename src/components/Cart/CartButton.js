@@ -4,7 +4,6 @@ import { useDispatch,useSelector } from 'react-redux';
 const CartButton = (props) => {
   const dispatch = useDispatch();
   const cartQuanity=useSelector(state=>state.cartSlice.totalQuantity)
-  console.log(cartQuanity)
   const cartButton=()=>{
     dispatch(uiActions.toggle());
   }

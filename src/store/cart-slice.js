@@ -5,6 +5,7 @@ const cartslice=createSlice({
     initialState:{
         items:[],
         totalQuantity:0,
+        quantity:0
     },
     reducers:{
        addTOCart(state,action){
@@ -20,6 +21,8 @@ const cartslice=createSlice({
         removeFromCart(state,action){
             const id=action.payload;
             const existingItem=state.items.find(data=>data.id === id);
+            console.log(existingItem);
+            return existingItem
             state.totalQuantity--;
             if(!existingItem.quantity===1){
              state.items=state.items.filter(item=>item.id !==id)
